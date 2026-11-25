@@ -392,6 +392,7 @@ def cmd_all(args: argparse.Namespace) -> int:
     cmd_project(args)
     print("== 2/3 course report ==")
     args.branch = args.report_branch
+    args.repo = args.report_repo
     cmd_report(args)
     print("== 3/3 pull request ==")
     cmd_pr(args)
@@ -420,7 +421,7 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("--base", default="main")
     report.add_argument("--path", default=REPORT_PATH)
     report.add_argument("--report-file", default="docs/REPORT.md")
-    report.set_defaults(func=cmd_report)
+    report.set_defaults(func=cmd_report, repo=DEFAULT_FORK)
 
     pr = sub.add_parser("pr", help="open a pull request to the course upstream")
     pr.add_argument("--token-file", type=Path, default=DEFAULT_TOKEN_FILE)
@@ -439,6 +440,7 @@ def build_parser() -> argparse.ArgumentParser:
     all_cmd.add_argument("--repo", default=DEFAULT_PROJECT)
     all_cmd.add_argument("--branch", default="main")
     all_cmd.add_argument("--report-branch", default=REPORT_BRANCH)
+    all_cmd.add_argument("--report-repo", default=DEFAULT_FORK)
     all_cmd.add_argument("--description", default="JailForge: evolutionary jailbreak red-teaming and defense-in-depth evaluation")
     all_cmd.add_argument("--dry-run", action="store_true")
     all_cmd.add_argument("--base", default="main")
