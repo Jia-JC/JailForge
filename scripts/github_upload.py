@@ -44,11 +44,15 @@ EXCLUDE_DIRS = {
     ".testruns",
     ".tmp",
     ".secrets",
+    ".pyinstaller",
     ".idea",
     ".vscode",
     "node_modules",
     "build",
+    "build-portable",
     "dist",
+    "dist-portable",
+    "release",
     "vendor",
 }
 EXCLUDE_SUFFIXES = {".pyc", ".pyo", ".log"}

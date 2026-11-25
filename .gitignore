@@ -16,7 +16,15 @@ venv/
 .pytest_cache/
 .testruns/
 .tmp/
+.pyinstaller/
 .ruff_cache/
+
+# Build / release artifacts (EXE is attached to GitHub Releases, not committed)
+build/
+build-portable/
+dist/
+dist-portable/
+release/
 .mypy_cache/
 .coverage
 htmlcov/

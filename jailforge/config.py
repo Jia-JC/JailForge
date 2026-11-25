@@ -133,9 +133,14 @@ def resolve_model_settings(config: dict[str, Any]) -> dict[str, Any]:
     api_key_env = model.get("api_key_env", "JAILFORGE_API_KEY")
     api_key = os.getenv(api_key_env, "") or os.getenv("OPENAI_API_KEY", "")
     model["api_key"] = api_key
-    model["base_url"] = os.getenv("JAILFORGE_BASE_URL", model.get("base_url", "") or "")
-    model["model"] = os.getenv("JAILFORGE_MODEL", model.get("model", "") or "")
-    model["provider"] = os.getenv("JAILFORGE_PROVIDER", model.get("provider", "mock") or "mock")
+    provider = os.getenv("JAILFORGE_PROVIDER", model.get("provider", "mock") or "mock")
+    model["provider"] = provider
+    if provider != "mock":
+        model["base_url"] = os.getenv("JAILFORGE_BASE_URL", model.get("base_url", "") or "")
+        model["model"] = os.getenv("JAILFORGE_MODEL", model.get("model", "") or "")
+    else:
+        model["base_url"] = ""
+        model["model"] = model.get("model") or "mock-safety-v1"
     judge_model = os.getenv("JAILFORGE_JUDGE_MODEL", "")
     if judge_model:
         model["judge_model"] = judge_model

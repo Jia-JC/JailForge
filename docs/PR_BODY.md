@@ -15,12 +15,22 @@ https://github.com/Jia-JC/JailForge
 - 规则评判 + LLM-as-judge + 集成评判；
 - ASR、Wilson 95% CI、防御绝对/相对下降、分类别 ASR、良性 FPR；
 - CLI + Gradio 四标签页 Demo + 自动 Markdown 报告；
-- 25 项 pytest 全部通过；
+- 29 项 pytest 全部通过；
 - 离线 Mock pilot：1536 trials，无防御 ASR 23.7%，filter 17.7%，self_defense 3.4%，
   layered 0.0%，FPR 0/16（**Mock 数据仅验证流水线，不代表真实模型安全性**）；
 - 真实模型 pilot（DeepSeek `deepseek-flash`）：160 trials，LLM judge ASR **0.0%**
   （0/160，95% CI 0.0%–2.3%），0 调用错误；3 条 judge fallback 经复核修正，
   规则 judge 的 0.6% 是 Base64 解码尝试的误判。
+
+## 桌面版（可直接下载）
+
+- Release：<https://github.com/Jia-JC/JailForge/releases/latest>
+- `JailForge.exe`：单文件版（约 12.4 MB）
+- `JailForge-portable-win64.zip`：便携文件夹版（约 12.3 MB，推荐）
+- 本地 SPA：概览 / 单条测试 / 批量评测 / 进化攻击 / 结果与报告 / 关于与伦理
+- 默认 Mock 离线；在 exe 同目录放 `.env` 即可切换 DeepSeek 等真实 API
+
+![桌面版概览](https://github.com/Jia-JC/JailForge/raw/main/docs/assets/ui-dashboard.png)
 
 ## 自评得分点
 
@@ -38,5 +48,6 @@ https://github.com/Jia-JC/JailForge
   本 PR 按仓库实际目录提交，避免新建重复目录。
 - 真实 pilot 出现天花板效应：无防御基线也是 0.0%，暂未测出防御差异；下一版将扩展到
   8 类均衡目标、多轮攻击与更弱模型对照。
+- 桌面版单文件如遇系统临时目录限制，请使用 `JailForge-portable-win64.zip` 便携版。 
 - 报告中的 Mock 数字仅用于验证评测流水线；真实 0.0% 仅代表 8 条目标的小样本结果。
 - 本项目仅用于授权的安全研究与教学评测；数据集只含抽象目标，不含可操作细节。

@@ -1,0 +1,14 @@
+JailForge 便携版 v0.1.0
+=====================
+
+1. 解压整个文件夹到任意可写目录（不要只复制 exe）。
+2. 双击 JailForge.exe，浏览器会自动打开本地界面。
+3. 默认 Mock 离线模式，无需 API Key。
+4. 使用真实模型：在本文件夹新建 .env，填写：
+   JAILFORGE_BASE_URL=https://api.deepseek.com/v1
+   JAILFORGE_MODEL=deepseek-chat
+   JAILFORGE_API_KEY=sk-...
+   保存后重启 exe。
+5. 评测结果保存在本文件夹的 results/ 下。
+6. 退出：点击界面左下角“退出程序”。
+7. 仅用于授权的安全研究与教学评测；数据集只含抽象目标。

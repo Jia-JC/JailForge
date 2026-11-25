@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JailForge">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="0.55" stop-color="#a5b4fc"/>
+      <stop offset="1" stop-color="#f9a8d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#0b1220"/>
+  <path d="M32 9 14 16.5v13.2C14 41 21.2 49.4 32 54.5c10.8-5.1 18-13.5 18-24.8V16.5L32 9Z" fill="url(#g)"/>
+  <path d="m23.5 32.2 6 6.1 12-13" fill="none" stroke="#06121f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

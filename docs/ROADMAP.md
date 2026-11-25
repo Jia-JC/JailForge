@@ -14,6 +14,7 @@
 - [x] CLI + Gradio Demo + 自动报告
 - [x] pytest 测试
 - [x] 离线 Mock pilot
+- [x] Windows 桌面版 EXE + 便携 zip + Release
 
 ## v0.2 真实模型 pilot
 
