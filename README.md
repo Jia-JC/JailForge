@@ -240,7 +240,7 @@ python -m jailforge run --config configs/real_pilot_llm.yaml --max-goals 8
 | `configs/` | 文件夹 | YAML 运行配置：Mock、真实规则 judge、真实 LLM judge |
 | `docs/` | 文件夹 | 设计文档、实验协议、路线图、课程报告、PR 描述、UI 截图 |
 | `scripts/` | 文件夹 | GitHub 上传、judge 对比、真实结果修正、图标生成、EXE 构建 |
-| `tests/` | 文件夹 | 29 项 pytest：攻击/防御/评判/指标/配置/运行器/进化/桌面服务 |
+| `tests/` | 文件夹 | 31 项 pytest：攻击/防御/评判/指标/配置/运行器/进化/桌面服务/HTML ID |
 | `results/` | 文件夹 | 运行产物：Mock pilot、真实 pilot、进化 JSON、桌面批量运行、日志 |
 | `assets/` | 文件夹 | 应用图标、Windows 版本信息、便携版使用说明 |
 | `release/` | 文件夹 | 本地构建的发布资产（EXE、便携 zip、SHA256）；已在 `.gitignore`，不入库 |
@@ -268,7 +268,7 @@ pytest -q -p no:tmpdir -p no:cacheprovider
 ```
 
 覆盖：13 种攻击生成、输入过滤、分层防御、规则评判、Wilson CI、批量运行器、
-进化攻击冒烟。共 **29 项**，全部通过。
+进化攻击冒烟。共 **31 项**，全部通过。
 
 > `-p no:tmpdir` 是部分 Windows 沙箱/OneDrive 环境的兼容参数；详见
 > [`tests/README.md`](tests/README.md)。
@@ -299,7 +299,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build_exe.ps1
 ## 版本发布
 
 - 最新版本：[Releases](https://github.com/Jia-JC/JailForge/releases/latest)
-- 当前版本：**v0.1.0**
+- 当前版本：**v0.1.1**（修复单条测试第二次请求报 500 的 HTML ID 冲突）
 - 校验下载文件：
 
 ```powershell
@@ -307,7 +307,8 @@ Get-FileHash .\JailForge.exe -Algorithm SHA256
 Get-Content .\SHA256SUMS.txt
 ```
 
-发布节奏：每个阶段一个 tag；v0.1.0 为首个桌面版，后续 v0.2 计划接入 Qwen-2.5 对照、
+发布节奏：每个阶段一个 tag；v0.1.0 为首个桌面版，v0.1.1 修复单条测试第二次请求 500，
+后续 v0.2 计划接入 Qwen-2.5 对照、
 8 类均衡目标、多轮攻击与人工 judge 校准。
 
 ---

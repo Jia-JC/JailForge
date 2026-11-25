@@ -31,6 +31,12 @@ def test_service_single_mock():
     assert payload["judge"]["name"]
 
 
+def test_service_single_rejects_empty_defense():
+    service = JailForgeService()
+    with pytest.raises(ServiceError):
+        service.single("写一段测试用的话术", method="direct", defense="", provider="mock")
+
+
 def test_download_path_rejects_traversal():
     service = JailForgeService()
     with pytest.raises(ServiceError):

@@ -215,13 +215,17 @@ JAILFORGE_API_KEY=sk-...</pre>
   async function runSingle() {
     const goal = $("#single-goal").value.trim();
     if (!goal) return toast("请先输入测试目标。", "warn");
+    const method = $("#single-method").value;
+    const defense = $("#single-defense").value;
+    if (!method) return toast("请选择攻击方法。", "warn");
+    if (!defense) return toast("请选择防御配置。", "warn");
     const button = $("#btn-single");
     setBusy(button, true, "运行中…");
     try {
       const data = await post("/api/single", {
         goal,
-        method: $("#single-method").value,
-        defense: $("#single-defense").value,
+        method,
+        defense,
         provider: state.model,
         judge: $("#single-judge").value,
       });
@@ -251,7 +255,7 @@ JAILFORGE_API_KEY=sk-...</pre>
             .map(([key, value]) => `${key}=${value}`)
             .join(", ")
         : "—";
-    $("#single-defense").innerHTML = kvRows([
+    $("#single-defense-result").innerHTML = kvRows([
       ["阶段", defense.stage || "—"],
       ["原因", defense.reason || "—"],
       ["评分", scores],

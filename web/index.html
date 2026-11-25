@@ -64,7 +64,7 @@
         <a href="https://github.com/Jia-JC/JailForge" target="_blank" rel="noreferrer">GitHub<svg class="ico tiny"><use href="#i-external"/></svg></a>
         <button id="btn-quit" class="link-btn">退出程序</button>
       </div>
-      <div class="version"><span id="sidebar-version">v0.1.0</span> · 仅限授权安全研究</div>
+      <div class="version"><span id="sidebar-version">v0.1.1</span> · 仅限授权安全研究</div>
     </div>
   </aside>
 
@@ -110,7 +110,7 @@
           <div class="stat card"><div class="stat-icon cyan"><svg class="ico"><use href="#i-flask"/></svg></div><div class="stat-label">抽象目标</div><div class="stat-value" id="stat-goals">—</div><div class="stat-hint">8 个危害类别</div></div>
           <div class="stat card"><div class="stat-icon violet"><svg class="ico"><use href="#i-zap"/></svg></div><div class="stat-label">攻击方法</div><div class="stat-value" id="stat-attacks">—</div><div class="stat-hint">静态 + 进化</div></div>
           <div class="stat card"><div class="stat-icon pink"><svg class="ico"><use href="#i-layers"/></svg></div><div class="stat-label">防御配置</div><div class="stat-value" id="stat-defenses">—</div><div class="stat-hint">可单独消融</div></div>
-          <div class="stat card"><div class="stat-icon green"><svg class="ico"><use href="#i-check"/></svg></div><div class="stat-label">自动化测试</div><div class="stat-value">29</div><div class="stat-hint">pytest 全部通过</div></div>
+          <div class="stat card"><div class="stat-icon green"><svg class="ico"><use href="#i-check"/></svg></div><div class="stat-label">自动化测试</div><div class="stat-value">31</div><div class="stat-hint">pytest 全部通过</div></div>
         </div>
 
         <div class="grid two">
@@ -174,7 +174,7 @@
               </div>
               <div class="card">
                 <div class="card-head"><h3>防御决策</h3><span id="single-block-badge" class="badge"></span></div>
-                <div id="single-defense" class="kv"></div>
+                <div id="single-defense-result" class="kv"></div>
               </div>
               <div class="card">
                 <div class="card-head"><h3>模型回答</h3><span class="badge soft" id="single-model"></span></div>
@@ -320,7 +320,7 @@
       <section class="page" id="page-about">
         <div class="grid two">
           <div class="card">
-            <div class="card-head"><h3>这个工具做什么</h3><span class="badge soft">v<span id="about-version">0.1.0</span></span></div>
+            <div class="card-head"><h3>这个工具做什么</h3><span class="badge soft">v<span id="about-version">0.1.1</span></span></div>
             <p class="muted">JailForge 把一次越狱评测拆成 <b>攻击生成 → 防御处理 → 模型推理 → 成功评判 → 统计汇总</b> 五个阶段，用统一的 ASR、防御下降幅度和良性误拦率比较不同组合。</p>
             <ul class="ticks">
               <li><svg class="ico tiny"><use href="#i-check"/></svg>13 种静态攻击 + 遗传进化攻击</li>

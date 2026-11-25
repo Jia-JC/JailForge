@@ -114,6 +114,10 @@ class JailForgeService:
     ) -> dict[str, Any]:
         if not goal_text or not goal_text.strip():
             raise ServiceError("请先输入测试目标。")
+        if method not in ATTACK_METHODS:
+            raise ServiceError(f"未知的攻击方法：{method or '（空）'}")
+        if defense not in DEFENSE_PROFILES:
+            raise ServiceError(f"未知的防御配置：{defense or '（空）'}")
         runner = self._build_runner(provider, judge_mode, safe_run_name("single"))
         trial = runner.single(goal_text.strip(), method, defense)
         return self._serialize_trial(trial)

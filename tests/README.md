@@ -19,3 +19,7 @@ pytest -q -p no:tmpdir -p no:cacheprovider
 | `test_config.py` | 默认配置可加载、`${ENV}` 展开、覆盖生效、数据集格式正确 |
 | `test_runner.py` | 批量运行器冒烟：trial 数、summary、报告/CSV/JSONL 落盘、FPR、单条测试 |
 | `test_evolution.py` | 进化攻击冒烟：历史、最佳 prompt、评估次数 |
+| `test_desktop.py` | 桌面服务：meta、单条、空 defense 拒绝、下载路径越权、HTTP 健康检查与 POST |
+| `test_web_ids.py` | HTML ID 唯一性；`single-defense` 下拉框与 `single-defense-result` 结果容器分离 |
+
+共 **31 项**，全部通过。

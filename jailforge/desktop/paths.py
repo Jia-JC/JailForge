@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 APP_NAME = "JailForge"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def is_frozen() -> bool:
