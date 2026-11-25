@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jailforge"
+version = "0.1.0"
+description = "JailForge: an evolutionary jailbreak attack and defense-in-depth evaluation platform for LLMs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Jia Juncheng"}]
+keywords = ["llm", "ai-safety", "red-teaming", "jailbreak", "evaluation"]
+dependencies = [
+    "requests>=2.31",
+    "PyYAML>=6.0",
+    "python-dotenv>=1.0",
+    "gradio>=4.44",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+jailforge = "jailforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jailforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

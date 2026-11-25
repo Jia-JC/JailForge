@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Tooling
+.pytest_cache/
+.testruns/
+.tmp/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local artifacts
+results/cache.json
+results/**/trials.csv
+results/**/trials.jsonl
+results/**/*.log
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.secrets/
