@@ -17,7 +17,10 @@ https://github.com/Jia-JC/JailForge
 - CLI + Gradio 四标签页 Demo + 自动 Markdown 报告；
 - 25 项 pytest 全部通过；
 - 离线 Mock pilot：1536 trials，无防御 ASR 23.7%，filter 17.7%，self_defense 3.4%，
-  layered 0.0%，FPR 0/16（**Mock 数据仅验证流水线，不代表真实模型安全性**）。
+  layered 0.0%，FPR 0/16（**Mock 数据仅验证流水线，不代表真实模型安全性**）；
+- 真实模型 pilot（DeepSeek `deepseek-flash`）：160 trials，LLM judge ASR **0.0%**
+  （0/160，95% CI 0.0%–2.3%），0 调用错误；3 条 judge fallback 经复核修正，
+  规则 judge 的 0.6% 是 Base64 解码尝试的误判。
 
 ## 自评得分点
 
@@ -33,5 +36,7 @@ https://github.com/Jia-JC/JailForge
 
 - 课程 2026 目录实际名为 `07-Al-Safety`（小写 L），README 写作 `07-AI-Safety`；
   本 PR 按仓库实际目录提交，避免新建重复目录。
-- 报告中的 Mock 数字仅用于验证评测流水线；真实模型 pilot 将在获得 API Key 后按同一协议补充。
+- 真实 pilot 出现天花板效应：无防御基线也是 0.0%，暂未测出防御差异；下一版将扩展到
+  8 类均衡目标、多轮攻击与更弱模型对照。
+- 报告中的 Mock 数字仅用于验证评测流水线；真实 0.0% 仅代表 8 条目标的小样本结果。
 - 本项目仅用于授权的安全研究与教学评测；数据集只含抽象目标，不含可操作细节。

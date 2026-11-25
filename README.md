@@ -156,11 +156,15 @@ jailforge/
 
 - ✅ v0.1 原型：攻击/防御/评判/评测/Demo/测试全部可运行
 - ✅ 离线 Mock pilot：32 goals × 12 攻击 × 4 防御
-- ⏳ 真实模型 pilot：待填入 API Key 后运行（Qwen / DeepSeek 等）
+- ✅ 真实模型 pilot：DeepSeek `deepseek-flash`，8 goals × 5 攻击 × 4 防御 = 160 trials，
+  LLM judge ASR **0.0%**（0/160，95% CI 0.0%–2.3%）
+- ⏳ 扩展真实 pilot：8 类均衡目标 + Qwen-2.5/DeepSeek 双模型 + 多轮攻击
 - ⏳ 防御增强：语义过滤器、输出改写、跨模型迁移评测
 
-离线 pilot 的自动报告见 `results/mock_pilot/report.md`。再次强调：Mock 结果是
-流水线验证数据，不是模型安全结论。
+离线 pilot 的自动报告见 `results/mock_pilot/report.md`；真实 pilot 的报告见
+`results/real_pilot/report.md`，规则/LLM 评判对比见 `results/real_pilot/judge_comparison.md`。
+再次强调：Mock 结果是流水线验证数据，不是模型安全结论；真实 0.0% 也只是 8 条目标上的
+小样本结果，不能外推为模型整体安全性。
 
 ## 8. 测试
 

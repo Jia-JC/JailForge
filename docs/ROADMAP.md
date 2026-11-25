@@ -17,10 +17,11 @@
 
 ## v0.2 真实模型 pilot
 
-- [ ] 接入 Qwen-2.5 / DeepSeek，跑 8 goals × 5 attacks × 4 defenses
-- [ ] 规则评判器人工校准（40 条）
-- [ ] 报告真实 ASR、防御下降、FPR
-- [ ] 记录 API 成本与延迟
+- [x] 接入 DeepSeek `deepseek-flash`，跑 8 goals × 5 attacks × 4 defenses（160 trials）
+- [ ] 接入 Qwen-2.5 / 更弱模型对照
+- [ ] 规则评判器人工校准（40–80 条）
+- [x] 记录真实 ASR、防御下降、FPR（见 `results/real_pilot/`）
+- [ ] 8 类均衡目标与更难攻击
 
 ## v0.3 防御增强
 

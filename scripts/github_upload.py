@@ -58,7 +58,6 @@ EXCLUDE_GLOBS = [
     "results/**/trials.jsonl",
     "results/**/cache.json",
     "results/real_smoke*",
-    "results/real_pilot*",
 ]
 
 

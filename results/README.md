@@ -16,6 +16,9 @@
 ## 重要提醒
 
 - `mock_pilot/` 由离线 `MockLLM` 生成，**ASR 是合成数据**，只用于验证流水线。
-- `real_pilot/` 才会包含真实模型结果；请先确认 `.env` 配置正确。
+- `real_pilot/` 包含 DeepSeek `deepseek-flash` 的真实结果：160 trials，LLM judge ASR 0.0%
+  （0/160，95% CI 0.0%–2.3%）；`judge_comparison.md` 记录了规则/LLM 评判差异。
+- 真实 pilot 出现天花板效应：无防御基线也是 0.0%，暂未测出防御差异；不要把它解读为
+  “模型绝对安全”。
 - 原始模型回答可能包含敏感内容，默认不提交到公开仓库；如需分享，先脱敏/截断。
 - 提交前检查 `git status`，确保没有把 `.env`、`cache.json`、原始日志带入。
